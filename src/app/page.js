@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export default function WeatherApp() {
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  const [city, setCity] = useState("London");
+  const [city, setCity] = useState("San Francisco");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [useLocation, setUseLocation] = useState(false);
@@ -169,7 +169,7 @@ export default function WeatherApp() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="Enter city name..."
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="text-gray-600 flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button
               type="submit"
@@ -225,22 +225,22 @@ export default function WeatherApp() {
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="bg-gray-100 rounded-lg p-3">
                 <div className="text-gray-600">Feels like</div>
-                <div className="font-semibold">
+                <div className="font-semibold text-gray-600">
                   {Math.round(weather.main.feels_like)}°C
                 </div>
               </div>
               <div className="bg-gray-100 rounded-lg p-3">
                 <div className="text-gray-600">Humidity</div>
-                <div className="font-semibold">{weather.main.humidity}%</div>
+                <div className="font-semibold text-gray-600">{weather.main.humidity}%</div>
               </div>
               <div className="bg-gray-100 rounded-lg p-3">
                 <div className="text-gray-600">Wind</div>
-                <div className="font-semibold">
+                <div className="font-semibold text-gray-600">
                   {Math.round(weather.wind.speed)} m/s
                 </div>
               </div>
               <div className="bg-gray-100 rounded-lg p-3">
-                <div className="text-gray-600">Pressure</div>
+                <div className="text-gray-600 text-gray-600">Pressure</div>
                 <div className="font-semibold">{weather.main.pressure} hPa</div>
               </div>
             </div>
